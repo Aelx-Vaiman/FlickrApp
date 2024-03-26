@@ -15,10 +15,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ChocKit:
-    :commit: 9a00a6935b7070963c6bbefffb503d9a4874e68b
+    :commit: b5118353f9d103d96abae876322aa4dd362a6c4f
     :git: https://github.com/Aelx-Vaiman/ChocKit.git
   Kingfisher:
-    :commit: df8c264c41a05b1b5129687499666e3691f39c7e
+    :commit: a6fd2ab2c4ccdb627ff536a6dfef78bf7db37039
     :git: https://github.com/Aelx-Vaiman/Kingfisher.git
 
 SPEC CHECKSUMS:

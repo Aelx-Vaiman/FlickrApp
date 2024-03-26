@@ -83,11 +83,14 @@ private struct _CustomTabViewLayout<TabBarView: View, SelectionValue: Hashable>:
             selectedTabIndex: selectedTabIndex,
             controlledViews: children.map { UIHostingController(rootView: $0) }
         )
+        .ignoresSafeArea(.container)
+        
         #elseif canImport(AppKit)
         return NSTabViewControllerRepresentable(
             selectedTabIndex: selectedTabIndex,
             controlledViews: children.map { NSHostingController(rootView: $0) }
         )
+        .ignoresSafeArea(.container)
         #endif
     }
     
@@ -96,14 +99,12 @@ private struct _CustomTabViewLayout<TabBarView: View, SelectionValue: Hashable>:
             tabBarView
             
             contentView(children: children)
-                .ignoresSafeArea(.container)
         }
     }
     
     private func bottomBarView(children: _VariadicView.Children) -> some View {
         VStack(spacing: 0) {
             contentView(children: children)
-                .ignoresSafeArea(.container)
             
             tabBarView
         }
@@ -114,14 +115,12 @@ private struct _CustomTabViewLayout<TabBarView: View, SelectionValue: Hashable>:
             tabBarView
             
             contentView(children: children)
-                .ignoresSafeArea(.container)
         }
     }
     
     private func rightBarView(children: _VariadicView.Children) -> some View {
         HStack(spacing: 0) {
             contentView(children: children)
-                .ignoresSafeArea(.container)
             
             tabBarView
         }
@@ -142,7 +141,6 @@ private struct _CustomTabViewLayout<TabBarView: View, SelectionValue: Hashable>:
         
         return ZStack(alignment: alignment, content: {
             contentView(children: children)
-                .ignoresSafeArea(.container)
             
             tabBarView
         })
