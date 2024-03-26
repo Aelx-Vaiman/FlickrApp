@@ -1,0 +1,6 @@
+framework module ChocKit {
+  umbrella header "ChocKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

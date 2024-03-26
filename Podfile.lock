@@ -1,0 +1,30 @@
+PODS:
+  - ChocKit (0.1.9)
+  - Kingfisher (7.11.0)
+
+DEPENDENCIES:
+  - ChocKit (from `https://github.com/Aelx-Vaiman/ChocKit.git`, branch `development`)
+  - Kingfisher (from `https://github.com/Aelx-Vaiman/Kingfisher.git`)
+
+EXTERNAL SOURCES:
+  ChocKit:
+    :branch: development
+    :git: https://github.com/Aelx-Vaiman/ChocKit.git
+  Kingfisher:
+    :git: https://github.com/Aelx-Vaiman/Kingfisher.git
+
+CHECKOUT OPTIONS:
+  ChocKit:
+    :commit: 9a00a6935b7070963c6bbefffb503d9a4874e68b
+    :git: https://github.com/Aelx-Vaiman/ChocKit.git
+  Kingfisher:
+    :commit: df8c264c41a05b1b5129687499666e3691f39c7e
+    :git: https://github.com/Aelx-Vaiman/Kingfisher.git
+
+SPEC CHECKSUMS:
+  ChocKit: dee497ae458b4e50db9a6b10fbc0079321bf2956
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+
+PODFILE CHECKSUM: 8f8cfb0167c2bbf0be050a351be15811f4d6876a
+
+COCOAPODS: 1.15.2
