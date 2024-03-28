@@ -14,12 +14,12 @@ import Kingfisher
 class MainSearchScreenModel: ObservableObject {
     let backgroundColor: Color
     private let isiOSAppOnMac = ProcessInfo.processInfo.isiOSAppOnMac
-    private let flickrDataService = FlickrDataService()
+    private let flickrDataService: FlickrDataService
     let maxNumberOfChoices = ProcessInfo.processInfo.isiOSAppOnMac ? 6 : 4
     
+    @Published private(set) var photos: [Photo] = []
+    @Published private(set) var viewState: ViewLoadingState = .empty
     @Published var cellsPerRow = ProcessInfo.processInfo.isiOSAppOnMac ? 6 : 3
-    @Published var photos: [Photo] = []
-    @Published var viewState: ViewLoadingState = .empty
     @Published var searchText = ""
     @Published var showPicker = false
     
@@ -30,8 +30,9 @@ class MainSearchScreenModel: ObservableObject {
     private var newSearchTask: Task<(), Never>?
     private var fetchMoreTask: Task<(), Never>?
     
-    init( backgroundColor: Color) {
+    init( backgroundColor: Color, flickrDataService: FlickrDataService = FlickrDataService() ) {
         self.backgroundColor = backgroundColor
+        self.flickrDataService = flickrDataService
         setupSearchTextPublisher()
         ImageCache.default.memoryStorage.config.countLimit = 500
     }
