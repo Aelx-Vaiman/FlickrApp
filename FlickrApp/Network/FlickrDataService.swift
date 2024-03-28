@@ -9,9 +9,13 @@ import Foundation
 import Combine
 
 actor FlickrDataService {
-    private let apiService = FlickrAPIService()
+    private let apiService:FlickrAPIProtocol
     private var currentPage = 1
     private var totalPages = 1
+    
+    init(apiService: FlickrAPIProtocol = FlickrAPIService()) {
+        self.apiService = apiService
+    }
     
     func fetchImages(for query: String) async throws -> (String,[Photo]) {
         if currentPage > totalPages  {

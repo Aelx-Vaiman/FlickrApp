@@ -10,7 +10,11 @@ import Foundation
 import Combine
 import Network
 
-final class FlickrAPIService: Sendable {
+protocol FlickrAPIProtocol: Sendable {
+    func searchImages(for query: String, page: Int) async throws -> Data
+}
+
+final class FlickrAPIService: FlickrAPIProtocol {
     private let flickrKey = "a6701da737ccc259fe77fc3ee4839cdd"
     private let baseURL = "https://www.flickr.com/services/rest/"
     private let perPageCount = ProcessInfo.processInfo.isiOSAppOnMac ? 100 : 40
