@@ -22,6 +22,7 @@ struct MainSearchScreen: View {
             VStack{
                 SearchView(viewModel: viewModel)
                     .padding([.leading, .trailing, .bottom, .top], 8)
+                Spacer()
                 
                 ScrollView {
                     photosContent
@@ -40,6 +41,7 @@ struct MainSearchScreen: View {
             }
             
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
